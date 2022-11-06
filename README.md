@@ -1,3 +1,3 @@
 ## longin-lecture
 
-node 맛보
+node.js study
