@@ -11,8 +11,15 @@ function login(){
         id: id.value,
         password: password.value,
     };
-    console.log(req);
-}
 
-console.log(id); //-> null값 나옴 ejs 보다 console.log 값이 먼저 출력된다. ejs에 값을 먼저 가져오기위해 <sciprt>안에  defer를 작성한다.
-console.log("hello"); 
+    console.log(req);//-> json
+    console.log(JSON.stringify(req)); //json ->  문자열로 
+
+    fetch("/login", {
+        method :"POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(req)
+    })
+}
