@@ -18,7 +18,7 @@
     "test": "echo \"Error : no test specified\""
   },
   "keywords": [],
-  "author": {},
+  "author": {"name": "soo"},
   "license": "MIT",
   "homepage": "",
   "repository": {
