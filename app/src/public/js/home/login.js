@@ -2,7 +2,7 @@
 
 const id = document.querySelector("#id"),
     password = document.querySelector("#password"),
-    loginBtn = document.querySelector("button");
+    loginBtn = document.querySelector("#button");
 
 loginBtn.addEventListener("click", login);
 
@@ -12,16 +12,14 @@ function login(){
         password: password.value,
     };
 
-    console.log(req);//-> json
-    console.log(JSON.stringify(req)); //json ->  문자열로 
-
     fetch("/login", {
         method :"POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(req)
-    }).then((res) => res.json())
+        body: JSON.stringify(req),
+    })
+    .then((res) => res.json())
     .then((res) =>{
         if(res.success){
             location.href="/";
@@ -31,5 +29,5 @@ function login(){
     })
     .catch((err) => {
         console.error("로그인중 에러 발생");
-    })
+    });
 }
